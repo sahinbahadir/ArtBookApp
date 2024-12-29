@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.artbookapp.ArtActivity
 import com.example.artbookapp.databinding.ArtRecyclerRowBinding
 import com.example.artbookapp.entities.ArtModel
 
@@ -21,7 +22,9 @@ class ArtAdapter(val artList: ArrayList<ArtModel>) : RecyclerView.Adapter<ArtAda
     override fun onBindViewHolder(holder: ArtHolder, position: Int) {
         holder.binding.recyclerRowTextView.setText(artList.get(position).artName)
         holder.binding.recyclerRowTextView.setOnClickListener {
-            // intent to art detail
+            val intent = Intent(holder.itemView.context, ArtActivity::class.java)
+            intent.putExtra("artId", artList.get(position).artId)
+            holder.itemView.context.startActivity(intent)
         }
     }
 
