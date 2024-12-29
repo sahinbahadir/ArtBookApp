@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.addItem -> {
+            R.id.addArt -> {
 
-                // Intent
+                // Intent to add art
             }
         }
 
